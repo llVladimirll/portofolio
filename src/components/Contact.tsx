@@ -55,7 +55,7 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
             <p>
-              Your message has been sent successfully. I'll get back to you
+              Your message has been sent successfully. I&apos;ll get back to you
               soon!
             </p>
           </motion.div>
