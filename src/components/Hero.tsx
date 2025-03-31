@@ -90,13 +90,13 @@ export default function Hero() {
           className="w-full md:w-1/2 text-center md:text-left"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="text-elegant-secondary">
               Vladimirrahman Salsabil Abdullah
             </span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-6">
-            I'm a{" "}
+            I&apos;m a{" "}
             <TypeAnimation
               sequence={[
                 "Fullstack Developer",
