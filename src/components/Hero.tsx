@@ -47,33 +47,7 @@ const BackgroundPattern = () => {
   );
 };
 
-// const FloatingParticle = ({ delay }: { delay: number }) => {
-//   return (
-//     <motion.div
-//       className="absolute w-2 h-2 bg-elegant-secondary rounded-full opacity-30"
-//       initial={{ y: "110%", x: `${Math.random() * 100}%`, opacity: 0 }}
-//       animate={{
-//         y: "-100%",
-//         opacity: [0, 1, 1, 0],
-//         x: ["110%", `${Math.random() * 100}%`, `${Math.random() * 100}%`], // Keyframes for more movement
-//       }}
-//       transition={{
-//         duration: 1 + Math.random() * 1,
-//         delay: delay,
-//         repeat: Number.POSITIVE_INFINITY,
-//         ease: "linear",
-//       }}
-//     />
-//   );
-// };
-
 export default function Hero() {
-  const [particles, setParticles] = useState<number[]>([]);
-
-  useEffect(() => {
-    setParticles(Array.from({ length: 20 }, (_, i) => i));
-  }, []);
-
   return (
     <section
       id="hero"
