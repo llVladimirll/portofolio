@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 
 const projects = [
   {
@@ -25,8 +23,6 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-
   return (
     <section id="projects" className="py-20 px-4 md:px-8 bg-elegant-primary">
       <div className="max-w-6xl mx-auto">
@@ -41,49 +37,44 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-elegant-secondary rounded-lg overflow-hidden shadow-lg hover:shadow-elegant-accent transition duration-300 transform hover:scale-105"
-              onHoverStart={() => setHoveredProject(project.title)}
-              onHoverEnd={() => setHoveredProject(null)}
+              className="overflow-hidden rounded-lg" // Added rounded-lg here
             >
-              <div className="relative h-48">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                />
-                {hoveredProject === project.title && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="absolute inset-0 bg-elegant-primary bg-opacity-90 flex items-center justify-center"
-                  >
-                    <Link href={`${project.link}`}>
-                      <p className="text-elegant-accent font-bold text-lg">
-                        View Project
-                      </p>
-                    </Link>
-                  </motion.div>
-                )}
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-elegant-accent">
-                  {project.title}
-                </h3>
-                <p className="text-elegant-accent mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-elegant-primary text-elegant-accent text-xs font-semibold px-2 py-1 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full rounded-lg"
+              >
+                <div className="rounded-lg bg-elegant-secondary overflow-hidden shadow-lg hover:shadow-elegant-accent transition-all duration-300 transform hover:scale-105 h-full flex flex-col">
+                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+                    {" "}
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover rounded-t-lg" // Apply rounded-t-lg directly to Image
+                    />
+                  </div>
+                  <div className="p-6 flex-1 rounded-b-lg">
+                    <h3 className="text-xl font-semibold mb-2 text-elegant-accent">
+                      {project.title}
+                    </h3>
+                    <p className="text-elegant-accent mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-elegant-primary text-elegant-accent text-xs font-semibold px-2 py-1 rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </motion.div>
           ))}
         </div>

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import ParticleContainer from "./ParticleContainer";
@@ -85,36 +84,38 @@ export default function Hero() {
               className="text-elegant-secondary"
             />
           </h2>
-          <Link to="projects" smooth={true} duration={500}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-elegant-secondary text-elegant-accent font-bold py-2 px-6 rounded-md transition duration-300 hover:bg-elegant-accent hover:text-elegant-primary"
-            >
-              Explore My Work
-            </motion.button>
-          </Link>
-          <div className="flex items-center gap-4 mt-6">
-            <motion.a
-              href="https://linkedin.com/in/vladimirrahman"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -5 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-elegant-accent hover:text-elegant-secondary transition-colors duration-300"
-            >
-              <FaLinkedin size={32} />
-            </motion.a>
-            <motion.a
-              href="https://github.com/llVladimirll"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -5 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-elegant-accent hover:text-elegant-secondary transition-colors duration-300"
-            >
-              <FaGithub size={32} />
-            </motion.a>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mt-6">
+            <Link to="projects" smooth={true} duration={500}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-elegant-secondary text-elegant-accent font-bold py-2 px-6 rounded-md transition duration-300 hover:bg-elegant-accent hover:text-elegant-primary"
+              >
+                Explore My Work
+              </motion.button>
+            </Link>
+            <div className="flex gap-4">
+              <motion.a
+                href="https://linkedin.com/in/vladimirrahman"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-elegant-accent hover:text-elegant-secondary transition-colors duration-300"
+              >
+                <FaLinkedin size={32} />
+              </motion.a>
+              <motion.a
+                href="https://github.com/llVladimirll"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-elegant-accent hover:text-elegant-secondary transition-colors duration-300"
+              >
+                <FaGithub size={32} />
+              </motion.a>
+            </div>
           </div>
         </motion.div>
         <motion.div
