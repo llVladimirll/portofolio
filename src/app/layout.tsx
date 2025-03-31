@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Vladimirrahman - Fullstack Developer",
   description:
-    "Portfolio website showcasing my skills and projects as a fullstack developer",
+    "Vladimirrahman is a fullstack develope, he is a 6th semester student at Universitas Islam Indonesia majoring in Informatics",
 };
 
 export default function RootLayout({
