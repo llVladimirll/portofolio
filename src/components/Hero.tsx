@@ -67,7 +67,6 @@ const FloatingParticle = ({ delay }: { delay: number }) => {
 };
 
 export default function Hero() {
-  const [isHovered, setIsHovered] = useState(false);
   const [particles, setParticles] = useState<number[]>([]);
 
   useEffect(() => {
@@ -150,8 +149,6 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0"
-          onHoverStart={() => setIsHovered(true)}
-          onHoverEnd={() => setIsHovered(false)}
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 rounded-full">
             <Image
