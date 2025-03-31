@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import ParticleContainer from "./ParticleContainer";
 
 const BackgroundPattern = () => {
   return (
@@ -46,25 +47,25 @@ const BackgroundPattern = () => {
   );
 };
 
-const FloatingParticle = ({ delay }: { delay: number }) => {
-  return (
-    <motion.div
-      className="absolute w-2 h-2 bg-elegant-secondary rounded-full opacity-30"
-      initial={{ y: "100%", x: Math.random() * 100 + "%", opacity: 0 }}
-      animate={{
-        y: "-100%",
-        opacity: [0, 1, 1, 0],
-        x: `calc(${Math.random() * 100}% + ${(Math.random() - 0.5) * 50}px)`,
-      }}
-      transition={{
-        duration: 10 + Math.random() * 10,
-        delay: delay,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "linear",
-      }}
-    />
-  );
-};
+// const FloatingParticle = ({ delay }: { delay: number }) => {
+//   return (
+//     <motion.div
+//       className="absolute w-2 h-2 bg-elegant-secondary rounded-full opacity-30"
+//       initial={{ y: "110%", x: `${Math.random() * 100}%`, opacity: 0 }}
+//       animate={{
+//         y: "-100%",
+//         opacity: [0, 1, 1, 0],
+//         x: ["110%", `${Math.random() * 100}%`, `${Math.random() * 100}%`], // Keyframes for more movement
+//       }}
+//       transition={{
+//         duration: 1 + Math.random() * 1,
+//         delay: delay,
+//         repeat: Number.POSITIVE_INFINITY,
+//         ease: "linear",
+//       }}
+//     />
+//   );
+// };
 
 export default function Hero() {
   const [particles, setParticles] = useState<number[]>([]);
@@ -79,9 +80,7 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center bg-elegant-primary text-elegant-accent px-4 relative overflow-hidden"
     >
       <BackgroundPattern />
-      {particles.map((_, index) => (
-        <FloatingParticle key={index} delay={index * 0.5} />
-      ))}
+      <ParticleContainer />
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between w-full relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
