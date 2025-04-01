@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vladimirrahman.me
+
+# Sitemaps
+Sitemap: https://vladimirrahman.me/sitemap.xml
