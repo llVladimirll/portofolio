@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import ParticleContainer from "./ParticleContainer";
 
 const BackgroundPattern = () => {
