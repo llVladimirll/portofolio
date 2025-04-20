@@ -94,28 +94,6 @@ export default function Hero() {
                 Explore My Work
               </motion.button>
             </Link>
-            <div className="flex gap-4">
-              <motion.a
-                href="https://linkedin.com/in/vladimirrahman"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-elegant-accent hover:text-elegant-secondary transition-colors duration-300"
-              >
-                <FaLinkedin size={32} />
-              </motion.a>
-              <motion.a
-                href="https://github.com/llVladimirll"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-elegant-accent hover:text-elegant-secondary transition-colors duration-300"
-              >
-                <FaGithub size={32} />
-              </motion.a>
-            </div>
           </div>
         </motion.div>
         <motion.div
