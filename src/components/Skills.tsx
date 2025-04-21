@@ -39,7 +39,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 md:px-8 bg-elegant-accent">
+    <section id="skills" className="py-10 px-4 md:px-8 bg-elegant-accent">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center text-elegant-primary">
           My Skillset
